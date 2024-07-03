@@ -7,9 +7,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    
-
-<script src="app.js"></script>
+    <main class="main">
+        <div class="content">
+            <div class="message turn">move: X</div>
+            <div class="board">
+                <div id="1" class="cell"></div>
+                <div id="2" class="cell"></div>
+                <div id="3" class="cell"></div>
+                <div id="4" class="cell"></div>
+                <div id="5" class="cell"></div>
+                <div id="6" class="cell"></div>
+                <div id="7"class="cell"></div>
+                <div id="8" class="cell"></div>
+                <div id="9" class="cell"></div>
+            </div>
+            <div class="message restart">restart</div>
+        </div>
+        <div class="message stat">
+            <table>
+                <th colspan="2">Statistic:</th>
+                <tr>
+                    <td>X:</td>
+                    <td><span id="statX">0</span></td>
+                </tr>
+                <tr>
+                    <td>O:</td>
+                    <td><span id="statO">0</span></td>
+                </tr>
+                <tr>
+                    <td>Draw:</td>
+                    <td><span id="statD">0</span></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -1,1 +1,1 @@
-# tic-tac-toe.-on-JS
+# tic-tac-toe
