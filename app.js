@@ -25,37 +25,35 @@ cells.forEach((e) => e.addEventListener('click', () => {
         moves++
         currentPlayer === 'X' ? cellIdX.push(parseInt(e.id)) : cellIdO.push(parseInt(e.id))
     };
-
     
-    currentPlayer === 'X'
-    ? currentPlayer = 'O'
-    : currentPlayer = 'X';
-    if (moves === 9) {
-        setTimeout(function() {
-            alert('Draw')
-            restartGame();
-            document.querySelector('#statD').textContent++
-        }, 300);
-    }
-    document.querySelector('.turn').innerHTML = `move: ${currentPlayer}`;
 
-    console.log(cellIdX)
-    console.log(cellIdO)
-    
     if (checkWinner(cellIdX)) {
         setTimeout(function() {
             alert('win: X')
             document.querySelector('#statX').textContent++
-            setTimeout(restartGame, 150);
-        }, 300);
+            restartGame();
+        }, 200);
     }
-    if (checkWinner(cellIdO)) {
+    else if (checkWinner(cellIdO)) {
         setTimeout(function() {
             alert('win: O')
             document.querySelector('#statO').textContent++
             restartGame();
-        }, 300);
+        }, 200);
     }
+    else if (moves === 9) {
+        setTimeout(function() {
+            alert('Draw')
+            restartGame();
+            document.querySelector('#statD').textContent++
+        }, 200);
+    };
+
+
+    currentPlayer === 'X'
+    ? currentPlayer = 'O'
+    : currentPlayer = 'X';
+    document.querySelector('.turn').innerHTML = `move: ${currentPlayer}`;
 }));
 
 function checkWinner(data) {
@@ -65,7 +63,6 @@ function checkWinner(data) {
     } 
     return false; 
 };
-
 function restartGame() {
     cells.forEach((e) => e.classList.remove('X', 'O'));
     moves = 0;
